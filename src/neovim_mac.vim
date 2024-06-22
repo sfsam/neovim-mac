@@ -59,6 +59,12 @@ function! neovim_mac#OpenTabs(paths) abort
     endfor
 endfunction
 
+function! neovim_mac#OpenBuffers(paths) abort
+    for path in a:paths
+        execute "edit " . path
+    endfor
+endfunction
+
 function! neovim_mac#OpenCount(paths) abort
     let open = 0
 

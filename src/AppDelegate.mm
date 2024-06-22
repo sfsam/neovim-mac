@@ -175,7 +175,13 @@ static NVWindowController* openWith(NSArray<NVWindowController*> *windows,
     } else {
         std::vector<std::string_view> paths{filename.UTF8String};
         NVWindowController *controller = openWith(windows, paths);
-        controller.process->open_tabs(paths);
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if ([defaults boolForKey:@"NVPreferencesOpenFilesInBuffersInsteadOfTabs"]) {
+            controller.process->open_buffers(paths);
+        }
+        else {
+            controller.process->open_tabs(paths);
+        }
         [controller.window makeKeyAndOrderFront:nil];
     }
 
@@ -198,7 +204,13 @@ static NVWindowController* openWith(NSArray<NVWindowController*> *windows,
     }
 
     NVWindowController *controller = openWith(windows, paths);
-    controller.process->open_tabs(paths);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"NVPreferencesOpenFilesInBuffersInsteadOfTabs"]) {
+        controller.process->open_buffers(paths);
+    }
+    else {
+        controller.process->open_tabs(paths);
+    }
     [controller.window makeKeyAndOrderFront:nil];
 }
 

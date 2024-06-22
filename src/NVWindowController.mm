@@ -449,7 +449,12 @@ static std::pair<arc_ptr<CTFontDescriptorRef>, CGFloat> getFontDescriptor(nvim::
     }
 
     NSString *directory = [filenames[0] stringByDeletingLastPathComponent];
-    std::vector<const char*> argv{"nvim", "--embed", "-p"};
+    std::vector<const char*> argv{"nvim", "--embed"};
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults boolForKey:@"NVPreferencesOpenFilesInBuffersInsteadOfTabs"]) {
+        argv.push_back("-p");
+    }
 
     for (NSString *file in filenames) {
         argv.push_back([file UTF8String]);
@@ -929,7 +934,13 @@ static std::vector<std::string_view> URLPaths(NSArray<NSURL*> *urls) {
         return;
     }
 
-    nvim.open_tabs(URLPaths([panel URLs]));
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"NVPreferencesOpenFilesInBuffersInsteadOfTabs"]) {
+        nvim.open_buffers(URLPaths([panel URLs]));
+    }
+    else {
+        nvim.open_tabs(URLPaths([panel URLs]));
+    }
 }
 
 - (void)openTabs:(const std::vector<std::string_view> *)paths {

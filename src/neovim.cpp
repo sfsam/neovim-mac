@@ -711,6 +711,11 @@ void process::open_tabs(const std::vector<std::string_view> &paths) {
                 std::tuple<const std::vector<std::string_view>&>(paths));
 }
 
+void process::open_buffers(const std::vector<std::string_view> &paths) {
+    rpc_request(null_msgid, "nvim_call_function", "neovim_mac#OpenBuffers",
+                std::tuple<const std::vector<std::string_view>&>(paths));
+}
+
 void process::open_count(const std::vector<std::string_view> &paths,
                          dispatch_time_t timeout, response_handler handler) {
     auto msgid = store_handler(timeout, std::move(handler));

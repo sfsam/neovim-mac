@@ -385,6 +385,10 @@ public:
     ///   - Other wise open the file in a new tab.
     void open_tabs(const std::vector<std::string_view> &paths);
 
+    /// Opens a list of files in buffers.
+    /// @param paths A list of paths.
+    void open_buffers(const std::vector<std::string_view> &paths);
+
     /// Returns the current Neovim mode.
     ///
     /// Synchronously calls the API method nvim_get_mode and returns the result
