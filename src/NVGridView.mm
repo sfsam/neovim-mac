@@ -403,12 +403,12 @@ static void blinkCursorToggleOn(void *context) {
 - (void)setFont:(const font_family&)font {
     fontFamily = font;
 
-    CGFloat leading = floor(font.leading() + 0.5);
-    CGFloat descent = floor(font.descent() + 0.5);
-    CGFloat ascent = floor(font.ascent() + 0.5);
+    CGFloat leading = floor(font.leading());
+    CGFloat descent = floor(font.descent());
+    CGFloat ascent = floor(font.ascent());
 
     CGFloat cellHeight = leading + descent + ascent;
-    CGFloat cellWidth = floor(font.width() + 0.5);
+    CGFloat cellWidth = floor(font.width());
 
     cellSize.x = cellWidth;
     cellSize.y = cellHeight;
