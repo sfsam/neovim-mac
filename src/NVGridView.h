@@ -44,17 +44,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) const font_family &font;
 
 /// Returns the size of a single width cell.
-- (NSSize)cellSize;
+@property (nonatomic, readonly) NSSize cellSize;
 
 /// Returns the frame size required to fit the current grid.
 /// The value returned by this method changes whenever the grid size or
 /// cell size change.
-- (NSSize)desiredFrameSize;
+@property (nonatomic, readonly) NSSize desiredFrameSize;
 
 /// Returns the maximum grid size that can fit in the view's current frame size.
 /// The value returned by this method changes whenever the cell size or
 /// frame size changes.
-- (nvim::grid_size)desiredGridSize;
+@property (nonatomic, readonly) nvim::grid_size desiredGridSize;
 
 /// Translates a window location to a grid point.
 /// @returns The grid position of the cell at window location.
