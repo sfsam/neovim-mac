@@ -29,8 +29,6 @@
 		6993FAD624BCCECB0022682E /* spawn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6993FAD524BCCECB0022682E /* spawn.cpp */; };
 		69A3A76624E6EC40003F628C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 69A3A76524E6EC40003F628C /* Credits.rtf */; };
 		69B04DD424B76C8B000DF9C4 /* neovim_mac.vim in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69B04DD224B76C10000DF9C4 /* neovim_mac.vim */; };
-		69CB6DEA24AB963B0075229B /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 69CB6DE924AB963B0075229B /* lib */; };
-		69CB6DEC24AB96450075229B /* share in Resources */ = {isa = PBXBuildFile; fileRef = 69CB6DEB24AB96450075229B /* share */; };
 		69CB6DED24AB96560075229B /* lib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69CB6DE924AB963B0075229B /* lib */; };
 		69CB6DEE24AB965A0075229B /* share in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69CB6DEB24AB96450075229B /* share */; };
 		69E15157244E023900F8AEC7 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 69E15156244E023900F8AEC7 /* shaders.metal */; };
@@ -356,9 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69CB6DEC24AB96450075229B /* share in Resources */,
 				69905F2424C4B57D00CD67F1 /* Neovim.icns in Resources */,
-				69CB6DEA24AB963B0075229B /* lib in Resources */,
 				69240E1D242B9855004E0DE0 /* Assets.xcassets in Resources */,
 				69A3A76624E6EC40003F628C /* Credits.rtf in Resources */,
 				69240E20242B9855004E0DE0 /* MainMenu.xib in Resources */,
