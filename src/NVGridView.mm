@@ -439,7 +439,7 @@ static void blinkCursorToggleOn(void *context) {
     undercurl.thickness = 2 * font.scale_factor();
     undercurl.ytranslate = underlineTranslate;
 
-    cursorLineThickness = 1 * font.scale_factor();
+    cursorLineThickness = 2 * font.scale_factor();
     [metalLayer setContentsScale:font.scale_factor()];
 }
 
