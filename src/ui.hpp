@@ -525,6 +525,9 @@ public:
 
     /// Called when any of the options listed in nvim::options change.
     void options_set();
+    
+    /// Called when the default background color changes.
+    void default_background_color_set();
 };
 
 /// Responsible for handling Neovim UI events.
@@ -687,6 +690,9 @@ public:
 
     /// Returns the guifont option string.
     std::string get_guifont();
+
+    /// Returns the default background color.
+    nvim::rgb_color get_default_background_color();
 
     /// Handle a Neovim RPC redraw notification.
     /// @param events The paramters of the RPC notification.

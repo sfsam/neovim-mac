@@ -276,6 +276,11 @@ public:
         return ui.get_guifont();
     }
 
+    /// Returns the default background color.
+    nvim::rgb_color get_default_background_color() {
+        return ui.get_default_background_color();
+    }
+
     /// Set the window controller.
     ///
     /// The window controller receives various UI related messages.

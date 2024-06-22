@@ -93,6 +93,9 @@ static NSMutableArray<NVWindowController*> *neovimWindows = [[NSMutableArray all
     [window setTabbingMode:NSWindowTabbingModeDisallowed];
     [window registerForDraggedTypes:[NSArray arrayWithObject:NSPasteboardTypeFileURL]];
 
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [window setTitlebarAppearsTransparent:[defaults boolForKey:@"NVPreferencesTitlebarAppearsTransparent"]];
+
     [window setStyleMask:NSWindowStyleMaskTitled         |
                          NSWindowStyleMaskClosable       |
                          NSWindowStyleMaskMiniaturizable |
@@ -1279,6 +1282,26 @@ static std::string joinURLs(NSArray<NSURL*> *urls, char delim) {
     }
 }
 
+// When the default background color changes, set the window's
+// background color to this color. This has the effect of tinting
+// the window's title bar. The window's NSAppearance is adjusted
+// based on whether the background color is light or dark. If the
+// title bar is transparent, this allows the title text to be
+// legible against the background color.
+- (void)defaultBackgroundColorDidChange {
+    nvim::rgb_color background = nvim.get_default_background_color();
+    CGFloat r = background.red();
+    CGFloat g = background.green();
+    CGFloat b = background.blue();
+    [self.window setBackgroundColor:[NSColor colorWithRed:r/255. green:g/255. blue:b/255. alpha:1]];
+
+    // Use a heuristic to determine if the color is light or dark.
+    // http://alienryderflex.com/hsp.html
+    CGFloat lightness = sqrt(0.299*r*r + 0.587*g*g + 0.114*b*b);
+    NSAppearanceName name = (lightness > 127.5) ? NSAppearanceNameAqua : NSAppearanceNameDarkAqua;
+    [self.window setAppearance:[NSAppearance appearanceNamed:name]];
+}
+
 @end
 
 // nvim::window_controller implementation. Declared in ui.hpp.
@@ -1318,6 +1341,12 @@ void window_controller::font_set() {
 void window_controller::options_set() {
     dispatch_async_f(dispatch_get_main_queue(), controller, [](void *context) {
         [(__bridge NVWindowController*)context optionsDidChange];
+    });
+}
+
+void window_controller::default_background_color_set() {
+    dispatch_async_f(dispatch_get_main_queue(), controller, [](void *context) {
+        [(__bridge NVWindowController*)context defaultBackgroundColorDidChange];
     });
 }
 

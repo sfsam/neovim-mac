@@ -456,6 +456,8 @@ void ui_controller::default_colors_set(uint32_t fg, uint32_t bg, uint32_t sp) {
     for (cell &cell : writing->cells) {
         adjust_defaults(def, cell.attrs);
     }
+    
+    window.default_background_color_set();
 }
 
 static inline void set_rgb_color(rgb_color &color, const msg::object &object) {
@@ -658,6 +660,11 @@ std::string ui_controller::get_guifont() {
 nvim::ui_options ui_controller::get_ui_options() {
     std::lock_guard lock(option_lock);
     return ui_opts;
+}
+
+nvim::rgb_color ui_controller::get_default_background_color() {
+    std::lock_guard lock(option_lock);
+    return hl_table[0].background;
 }
 
 static inline void set_font_option(std::string &opt_guifont,
