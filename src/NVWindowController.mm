@@ -108,7 +108,7 @@ static NSMutableArray<NVWindowController*> *neovimWindows = [[NSMutableArray all
         .ext_messages   = false,
         .ext_multigrid  = false,
         .ext_popupmenu  = false,
-        .ext_tabline    = true,
+        .ext_tabline    = false,
         .ext_termcolors = false
     };
 
