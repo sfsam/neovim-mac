@@ -39,8 +39,6 @@
 			<array>
 				<string>vim</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Vim Script File</string>
 			<key>CFBundleTypeRole</key>
@@ -53,8 +51,6 @@
 				<string>text</string>
 				<string>utf8</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>text/plain</string>
@@ -74,8 +70,6 @@
 				<string>ins</string>
 				<string>dtx</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>TeX File</string>
 			<key>CFBundleTypeRole</key>
@@ -86,8 +80,6 @@
 			<array>
 				<string>h</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>C Header Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -102,8 +94,6 @@
 			<array>
 				<string>pch</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>C Precompiled Header Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -122,8 +112,6 @@
 				<string>hxx</string>
 				<string>h++</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>C++ Header Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -134,8 +122,6 @@
 			<array>
 				<string>pch++</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>C++ Precompiled Header Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -150,8 +136,6 @@
 			<array>
 				<string>c</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>C Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -166,8 +150,6 @@
 			<array>
 				<string>m</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Objective-C Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -182,8 +164,6 @@
 			<array>
 				<string>mm</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Objective-C++ Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -202,8 +182,6 @@
 				<string>cxx</string>
 				<string>c++</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>C++ Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -219,8 +197,6 @@
 				<string>s</string>
 				<string>asm</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Assembly Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -235,8 +211,6 @@
 			<array>
 				<string>r</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Rez Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -252,8 +226,6 @@
 				<string>java</string>
 				<string>jav</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Java Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -272,8 +244,6 @@
 				<string>lpp</string>
 				<string>lxx</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Lex Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -292,8 +262,6 @@
 				<string>ypp</string>
 				<string>yxx</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Yacc Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -308,8 +276,6 @@
 			<array>
 				<string>defs</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Mig Definition File</string>
 			<key>CFBundleTypeRole</key>
@@ -320,8 +286,6 @@
 			<array>
 				<string>exp</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Symbol Export File</string>
 			<key>CFBundleTypeRole</key>
@@ -341,8 +305,6 @@
 				<string>f90</string>
 				<string>f95</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Fortran Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -357,8 +319,6 @@
 			<array>
 				<string>pas</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Pascal Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -375,8 +335,6 @@
 				<string>adb</string>
 				<string>ads</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Ada Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -401,8 +359,6 @@
 				<string>shtm</string>
 				<string>xhtm</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>text/html</string>
@@ -426,8 +382,6 @@
 				<string>cpt</string>
 				<string>dtml</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>text/xml</string>
@@ -449,8 +403,6 @@
 				<string>jscript</string>
 				<string>javascript</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>text/javascript</string>
@@ -472,8 +424,6 @@
 				<string>pod</string>
 				<string>perl</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>text/x-perl-script</string>
@@ -495,8 +445,6 @@
 				<string>cpy</string>
 				<string>python</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>text/x-python-script</string>
@@ -521,8 +469,6 @@
 				<string>ph4</string>
 				<string>phtml</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>text/php</string>
@@ -545,8 +491,6 @@
 				<string>rjs</string>
 				<string>rxml</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>text/ruby-script</string>
@@ -573,8 +517,6 @@
 				<string>profile</string>
 				<string>bash_logout</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Shell script</string>
 			<key>CFBundleTypeRole</key>
@@ -589,8 +531,6 @@
 			<array>
 				<string>class</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Java Class File</string>
 			<key>CFBundleTypeRole</key>
@@ -606,8 +546,6 @@
 				<string>patch</string>
 				<string>diff</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Patch File</string>
 			<key>CFBundleTypeRole</key>
@@ -618,8 +556,6 @@
 			<array>
 				<string>strings</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Strings File</string>
 			<key>CFBundleTypeRole</key>
@@ -634,8 +570,6 @@
 			<array>
 				<string>*</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Text File</string>
 			<key>CFBundleTypeOSTypes</key>
@@ -650,8 +584,6 @@
 			<array>
 				<string>applescript</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>AppleScript Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -666,8 +598,6 @@
 			<array>
 				<string>as</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>ActionScript Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -679,8 +609,6 @@
 				<string>asp</string>
 				<string>asa</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>ASP document</string>
 			<key>CFBundleTypeRole</key>
@@ -694,8 +622,6 @@
 				<string>asmx</string>
 				<string>ashx</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>ASP.NET document</string>
 			<key>CFBundleTypeRole</key>
@@ -706,8 +632,6 @@
 			<array>
 				<string>bib</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>BibTeX bibliography</string>
 			<key>CFBundleTypeRole</key>
@@ -718,8 +642,6 @@
 			<array>
 				<string>cs</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>C# Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -730,8 +652,6 @@
 			<array>
 				<string>cfdg</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Context Free Design Grammar</string>
 			<key>CFBundleTypeRole</key>
@@ -742,8 +662,6 @@
 			<array>
 				<string>csv</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Comma separated values</string>
 			<key>CFBundleTypeRole</key>
@@ -754,8 +672,6 @@
 			<array>
 				<string>tsv</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Tab separated values</string>
 			<key>CFBundleTypeRole</key>
@@ -767,8 +683,6 @@
 				<string>cgi</string>
 				<string>fcgi</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>CGI script</string>
 			<key>CFBundleTypeRole</key>
@@ -782,8 +696,6 @@
 				<string>config</string>
 				<string>htaccess</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Configuration file</string>
 			<key>CFBundleTypeRole</key>
@@ -794,8 +706,6 @@
 			<array>
 				<string>css</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Cascading style sheet</string>
 			<key>CFBundleTypeRole</key>
@@ -806,8 +716,6 @@
 			<array>
 				<string>dtd</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Document Type Definition</string>
 			<key>CFBundleTypeRole</key>
@@ -818,8 +726,6 @@
 			<array>
 				<string>dylan</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Dylan Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -831,8 +737,6 @@
 				<string>erl</string>
 				<string>hrl</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Erlang Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -843,8 +747,6 @@
 			<array>
 				<string>fscript</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>F-Script Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -856,8 +758,6 @@
 				<string>hs</string>
 				<string>lhs</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Haskell Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -868,8 +768,6 @@
 			<array>
 				<string>inc</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Include file</string>
 			<key>CFBundleTypeRole</key>
@@ -880,8 +778,6 @@
 			<array>
 				<string>ics</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>iCalendar schedule</string>
 			<key>CFBundleTypeRole</key>
@@ -892,8 +788,6 @@
 			<array>
 				<string>ini</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>MS Windows initialization file</string>
 			<key>CFBundleTypeRole</key>
@@ -904,8 +798,6 @@
 			<array>
 				<string>io</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Io Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -916,8 +808,6 @@
 			<array>
 				<string>bsh</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>BeanShell script</string>
 			<key>CFBundleTypeRole</key>
@@ -928,8 +818,6 @@
 			<array>
 				<string>properties</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Java properties file</string>
 			<key>CFBundleTypeRole</key>
@@ -940,8 +828,6 @@
 			<array>
 				<string>jsp</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Java Server Page</string>
 			<key>CFBundleTypeRole</key>
@@ -957,8 +843,6 @@
 				<string>mud</string>
 				<string>el</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>LISP Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -969,8 +853,6 @@
 			<array>
 				<string>log</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Log file</string>
 			<key>CFBundleTypeRole</key>
@@ -983,8 +865,6 @@
 				<string>wikipedia</string>
 				<string>mediawiki</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Mediawiki document</string>
 			<key>CFBundleTypeRole</key>
@@ -996,8 +876,6 @@
 				<string>ps</string>
 				<string>eps</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>PostScript Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -1009,8 +887,6 @@
 				<string>scm</string>
 				<string>sch</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Scheme Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -1021,8 +897,6 @@
 			<array>
 				<string>sql</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>SQL Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -1033,8 +907,6 @@
 			<array>
 				<string>tcl</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Tcl Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -1046,8 +918,6 @@
 				<string>xsl</string>
 				<string>xslt</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>XSL stylesheet</string>
 			<key>CFBundleTypeRole</key>
@@ -1059,8 +929,6 @@
 				<string>vcf</string>
 				<string>vcard</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Electronic business card</string>
 			<key>CFBundleTypeRole</key>
@@ -1071,8 +939,6 @@
 			<array>
 				<string>vb</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Visual Basic Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -1084,8 +950,6 @@
 				<string>yaml</string>
 				<string>yml</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>YAML document</string>
 			<key>CFBundleTypeRole</key>
@@ -1097,8 +961,6 @@
 				<string>gtd</string>
 				<string>gtdlog</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>GTD document</string>
 			<key>CFBundleTypeRole</key>
@@ -1112,8 +974,6 @@
 				<string>mdown</string>
 				<string>md</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Markdown document</string>
 			<key>CFBundleTypeRole</key>
@@ -1124,8 +984,6 @@
 			<array>
 				<string>rst</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>reStructuredText document</string>
 			<key>CFBundleTypeRole</key>
@@ -1136,8 +994,6 @@
 			<array>
 				<string>vba</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Vimball Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1149,8 +1005,6 @@
 				<string>vhd</string>
 				<string>vhdl</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>VHDL Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -1161,8 +1015,6 @@
 			<array>
 				<string>lua</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>text/x-lua-script</string>
@@ -1177,8 +1029,6 @@
 			<array>
 				<string>v</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Verilog HDL Source File</string>
 			<key>CFBundleTypeRole</key>
@@ -1189,8 +1039,6 @@
 			<array>
 				<string>vh</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Neovim-Document</string>
 			<key>CFBundleTypeName</key>
 			<string>Verilog HDL Header Source File</string>
 			<key>CFBundleTypeRole</key>
