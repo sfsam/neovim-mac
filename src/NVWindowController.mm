@@ -158,7 +158,7 @@ static NSMutableArray<NVWindowController*> *neovimWindows = [[NSMutableArray all
 }
 
 - (BOOL)windowShouldClose:(NSWindow *)sender {
-    nvim.command("quitall");
+    nvim.command("confirm quitall");
     return NO;
 }
 
@@ -1008,7 +1008,7 @@ static inline bool canSave(nvim::process &nvim) {
 }
 
 - (IBAction)closeTab:(id)sender {
-    [self normalCommand:"quit"];
+    [self normalCommand:"confirm quit"];
 }
 
 - (IBAction)showHelp:(id)sender {

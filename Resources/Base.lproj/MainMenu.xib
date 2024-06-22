@@ -96,7 +96,7 @@
                                     <action selector="closeAllWindows:" target="Voe-Tx-rLC" id="Jid-te-FW3"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Close Tab" keyEquivalent="w" id="lJ8-vI-6bO">
+                            <menuItem title="Close" keyEquivalent="w" id="lJ8-vI-6bO">
                                 <connections>
                                     <action selector="closeTab:" target="-1" id="ZGY-qS-4Gr"/>
                                 </connections>
