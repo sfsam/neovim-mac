@@ -445,7 +445,14 @@ static std::pair<arc_ptr<CTFontDescriptorRef>, CGFloat> getFontDescriptor(nvim::
         "nvim", "--embed", nullptr
     };
 
-    return [self spawnWithArgs:argv workingDirectory:NSHomeDirectory()];
+    // If we are invoked from the command-line (e.g. open -a Neovim "$@"),
+    // the environment variable $PWD will contain the working directory.
+    // If we are invoked by double-clicking the app icon, $PWD will be nil
+    // in which case we use the home directory as the working directory.
+    NSString *cwd = NSProcessInfo.processInfo.environment[@"PWD"];
+    NSString *directory = cwd ?: NSHomeDirectory();
+    
+    return [self spawnWithArgs:argv workingDirectory:directory];
 }
 
 - (int)spawnOpenFile:(NSString *)filename {
