@@ -1,3 +1,12 @@
+```
+This branch:
+- No externalized tabline
+- Subjective UI and aesthetic tweaks
+- Questionable bug fixes
+- Command-line helper 'nvmm' inside Neovim.app/Contents/Helpers
+  (akin to MacVim's 'mvim' helper)
+```
+---
 <img align="left" src="https://i.postimg.cc/5t3x3nhw/icon-128x128.png">
 
 # Neovim for macOS
