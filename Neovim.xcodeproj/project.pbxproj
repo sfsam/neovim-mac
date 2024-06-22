@@ -284,6 +284,7 @@
 				69B04DD324B76C43000DF9C4 /* CopyFiles */,
 				69019FB62966142D008B3582 /* CopyFiles */,
 				69B2C3F6296DE8CD0031B353 /* ShellScript */,
+				9268C0182C266E8200966004 /* Set CFBundleShortVersionString to NVIM version */,
 			);
 			buildRules = (
 			);
@@ -388,6 +389,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "find \"$CONFIGURATION_BUILD_DIR/Neovim.app/Contents\" -maxdepth 1 -empty -type d -delete\n";
+		};
+		9268C0182C266E8200966004 /* Set CFBundleShortVersionString to NVIM version */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Set CFBundleShortVersionString to NVIM version";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Set CFBundleShortVersionString to NVIM version.\nNVIM_VERSION=`./build/nvim/bin/nvim --version | awk 'NR==1 {print substr($2, 2)}'`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $NVIM_VERSION\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\necho \"\\nUpdated CFBundleShortVersionString: $NVIM_VERSION\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
