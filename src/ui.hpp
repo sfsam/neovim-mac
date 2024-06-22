@@ -592,6 +592,18 @@ public:
         complete = &triple_buffered[0];
         writing  = &triple_buffered[1];
         drawing  = &triple_buffered[2];
+
+        // Since neovim commit 08545bd45, neovim only sends a
+        // single `default_colors_set` event at startup just
+        // before drawing the screen. Provide dummy entries for
+        // hl_table[0] so ui_controller::hl_attr_define() works
+        // without requiring ui_controller::default_colors_set()
+        // to be called first.
+        cell_attributes &def = hl_table[0];
+        def.foreground = rgb_color(0, rgb_color::default_tag);
+        def.background = rgb_color(0, rgb_color::default_tag);
+        def.special    = rgb_color(0, rgb_color::default_tag);
+        def.flags = 0;
     }
 
     ui_controller(const ui_controller&) = delete;
