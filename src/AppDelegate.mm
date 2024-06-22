@@ -236,8 +236,7 @@ static NVWindowController* openWith(NSArray<NVWindowController*> *windows,
     NSAlert *alert = [[NSAlert alloc] init];
     alert.alertStyle = NSAlertStyleWarning;
     alert.messageText = @"Quit without saving?";
-    alert.informativeText = @"There are modified buffers, if you quit now "
-                             "all changes will be lost. Quit anyway?";
+    alert.informativeText = @"There are modified buffers. If you quit now all changes will be lost.";
     [alert addButtonWithTitle:@"Quit"];
     [alert addButtonWithTitle:@"Cancel"];
     
@@ -259,8 +258,28 @@ static NVWindowController* openWith(NSArray<NVWindowController*> *windows,
 }
 
 - (IBAction)closeAllWindows:(id)sender {
-    for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
-        [[window windowController] close];
+    BOOL shouldCloseAllWindows = YES;
+
+    NSArray<NVWindowController*> *windows = [NVWindowController windows];
+
+    if (hasUnsavedChanges(windows)) {
+        shouldCloseAllWindows = NO;
+        NSAlert *alert = [[NSAlert alloc] init];
+        alert.alertStyle = NSAlertStyleWarning;
+        alert.messageText = @"Close all windows without saving?";
+        alert.informativeText = @"There are modified buffers. If you close all windows now all changes will be lost.";
+        [alert addButtonWithTitle:@"Close All Windows"];
+        [alert addButtonWithTitle:@"Cancel"];
+
+        if ([alert runModal] == NSAlertFirstButtonReturn) {
+            shouldCloseAllWindows = YES;
+        }
+    }
+
+    if (shouldCloseAllWindows) {
+        for (NSWindow *window in [[NSApplication sharedApplication] windows]) {
+            [[window windowController] close];
+        }
     }
 }
 
