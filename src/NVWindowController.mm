@@ -706,6 +706,9 @@ static void keyDownIgnoreModifiers(nvim::process &nvim, NSEventModifierFlags fla
     unsigned short code = [event keyCode];
     NSEventModifierFlags flags = [event modifierFlags];
 
+    // TODO: The 'mousehide' Vim option is currently not implemented in nvim. Ideally, we would first check if 'mousehide' is set and if so, hide the mouse. Until nvim implements 'mousehide', we will just hide the mouse since that is the default setting for 'mousehide' anyway.
+    [NSCursor setHiddenUntilMouseMoves:YES];
+
     switch (code) {
         case kVK_Return:        return namedKeyDown(nvim, flags, "<CR>");
         case kVK_Tab:           return namedKeyDown(nvim, flags, "<Tab>");
