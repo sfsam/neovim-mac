@@ -1020,7 +1020,28 @@ static inline bool canSave(nvim::process &nvim) {
 }
 
 - (IBAction)closeTab:(id)sender {
-    [self normalCommand:"confirm quit"];
+    // Command-W closes buffers.
+    // Based on vim-command-w:
+    // https://github.com/nathanaelkane/vim-command-w
+    dispatch_time_t timeout = dispatch_time(DISPATCH_TIME_NOW, 250 * NSEC_PER_MSEC);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    bool multipleBuffersAreOpen = true;
+
+    nvim.eval("len(filter(range(1, bufnr('$')), 'buflisted(v:val) == 1')) == 1",
+              timeout,
+              [&](const msg::object &error, const msg::object &result, bool timed_out) {
+        if (timed_out || !result.is<msg::integer>() || result.get<msg::integer>() == 1) {
+            multipleBuffersAreOpen = false;
+        }
+        dispatch_semaphore_signal(semaphore);
+    });
+
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    if (multipleBuffersAreOpen) {
+        [self normalCommand:"confirm bdelete"];
+    } else {
+        [self normalCommand:"confirm quit"];
+    }
 }
 
 - (IBAction)showHelp:(id)sender {
