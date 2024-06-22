@@ -33,6 +33,7 @@
 		69CB6DEE24AB965A0075229B /* share in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69CB6DEB24AB96450075229B /* share */; };
 		69E15157244E023900F8AEC7 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 69E15156244E023900F8AEC7 /* shaders.metal */; };
 		69FB837D24A0F370008CCED1 /* NVRenderContext.mm in Sources */ = {isa = PBXBuildFile; fileRef = 69FB837C24A0F370008CCED1 /* NVRenderContext.mm */; };
+		9292063A289F5B7300C5216D /* NVPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92920639289F5B7300C5216D /* NVPrefsWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,8 @@
 		69E15156244E023900F8AEC7 /* shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = shaders.metal; sourceTree = "<group>"; };
 		69FB837B24A0F370008CCED1 /* NVRenderContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NVRenderContext.h; sourceTree = "<group>"; };
 		69FB837C24A0F370008CCED1 /* NVRenderContext.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NVRenderContext.mm; sourceTree = "<group>"; };
+		92920638289F5B7300C5216D /* NVPrefsWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NVPrefsWindowController.h; sourceTree = "<group>"; };
+		92920639289F5B7300C5216D /* NVPrefsWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NVPrefsWindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +212,8 @@
 				6955FE6524363AD400008191 /* NVWindowController.mm */,
 				69208E292457142600DBB860 /* NVGridView.h */,
 				69208E2A2457142600DBB860 /* NVGridView.mm */,
+				92920638289F5B7300C5216D /* NVPrefsWindowController.h */,
+				92920639289F5B7300C5216D /* NVPrefsWindowController.m */,
 				6945BBDE2457282C009ADB03 /* shader_types.hpp */,
 				69E15156244E023900F8AEC7 /* shaders.metal */,
 				69019FB4296613CA008B3582 /* clipboard.lua */,
@@ -430,6 +435,7 @@
 				69E15157244E023900F8AEC7 /* shaders.metal in Sources */,
 				69240E1B242B9854004E0DE0 /* AppDelegate.mm in Sources */,
 				69FB837D24A0F370008CCED1 /* NVRenderContext.mm in Sources */,
+				9292063A289F5B7300C5216D /* NVPrefsWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

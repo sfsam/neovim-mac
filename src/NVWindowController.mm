@@ -115,6 +115,8 @@ static NSMutableArray<NVWindowController*> *neovimWindows = [[NSMutableArray all
         .ext_termcolors = false
     };
 
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"NVPreferencesTitlebarAppearsTransparent" options:NSKeyValueObservingOptionNew context:nil];
+
     return self;
 }
 
@@ -154,6 +156,10 @@ static NSMutableArray<NVWindowController*> *neovimWindows = [[NSMutableArray all
 
     [self.window setFrameTopLeftPoint:cascadedTopLeft];
     return self;
+}
+
+- (void)dealloc {
+    [[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:@"NVPreferencesTitlebarAppearsTransparent"];
 }
 
 - (void)windowWillClose:(NSNotification *)notification {
@@ -1330,6 +1336,16 @@ static std::string joinURLs(NSArray<NSURL*> *urls, char delim) {
     CGFloat lightness = sqrt(0.299*r*r + 0.587*g*g + 0.114*b*b);
     NSAppearanceName name = (lightness > 127.5) ? NSAppearanceNameAqua : NSAppearanceNameDarkAqua;
     [self.window setAppearance:[NSAppearance appearanceNamed:name]];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([object isEqualTo:defaults]) {
+        if ([keyPath isEqualToString:@"NVPreferencesTitlebarAppearsTransparent"]) {
+            self.window.titlebarAppearsTransparent = [defaults boolForKey:keyPath];
+            [self defaultBackgroundColorDidChange];
+        }
+    }
 }
 
 @end
