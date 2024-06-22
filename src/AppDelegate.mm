@@ -203,6 +203,10 @@ static NVWindowController* openWith(NSArray<NVWindowController*> *windows,
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
+    if (!shouldTerminate) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        shouldTerminate = [defaults boolForKey:@"NVPreferencesTerminateAfterLastWindowClosed"];
+    }
     return shouldTerminate;
 }
 
