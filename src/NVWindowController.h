@@ -60,6 +60,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// @returns Zero on success, otherwise an errno error code.
 - (int)spawnOpenFiles:(NSArray<NSString*>*)filenames;
 
+/// Spawn a new Neovim child process and open filenames.
+/// If a child process is successfully created, the window is displayed.
+/// @param options An array of command-line options to pass to nvim.
+/// @param filenames An array of file paths to be opened.
+/// @returns Zero on success, otherwise an errno error code.
+- (int)spawnWithOptions:(NSArray<NSString*> *)options files:(NSArray<NSString*> *)filenames;
+
 /// Spawn a new Neovim child process and open URLs.
 /// If a child process is successfully created, the window is displayed.
 /// Each URL is opened in a separate tab.

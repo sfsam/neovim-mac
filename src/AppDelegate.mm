@@ -150,7 +150,10 @@ static NVWindowController* openWith(NSArray<NVWindowController*> *windows,
 
     signal(SIGPIPE, SIG_IGN);
     rpc = os_log_create("io.github.jaysandhu.neovim-mac", "RPC");
-    
+
+    // Set handler for events sent by command-line tool nvmm.
+    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleAppleEvent:withReplyEvent:) forEventClass:kCoreEventClass andEventID:'NVMM'];
+
     NVRenderContextOptions options;
     options.rasterizerWidth = 512;
     options.rasterizerHeight = 512;
@@ -162,6 +165,68 @@ static NVWindowController* openWith(NSArray<NVWindowController*> *windows,
     options.cacheEvictionPreserve = 2;
 
     contextManager = [[NVRenderContextManager alloc] initWithOptions:options delegate:self];
+}
+
+- (void)handleAppleEvent:(NSAppleEventDescriptor *)event withReplyEvent: (NSAppleEventDescriptor *)replyEvent {
+    BOOL openNewWindow = NO;
+    NSArray<NSString *> *options = @[];
+    NSAppleEventDescriptor *optnList = [event paramDescriptorForKeyword:'OPTN'];
+    for (NSInteger i = 1; i <= [optnList numberOfItems]; i++) {
+        openNewWindow = YES;
+        NSString *option = [[optnList descriptorAtIndex:i] stringValue];
+        if ([option isEqualToString:@"-N"]) continue;
+        options = [options arrayByAddingObject:option];
+    }
+
+    NSArray<NSString *> *filenames = @[];
+    NSAppleEventDescriptor *fileList = [event paramDescriptorForKeyword:'FILE'];
+    for (NSInteger i = 1; i <= [fileList numberOfItems]; i++) {
+        NSURL *fileURL = [[fileList descriptorAtIndex:i] fileURLValue];
+        filenames = [filenames arrayByAddingObject:[fileURL path]];
+    }
+
+    NSArray<NVWindowController*> *windows = [NVWindowController windows];
+
+    if (![windows count]) {
+        [[[NVWindowController alloc] initWithContextManager:contextManager] spawnWithOptions:options files:filenames];
+        return;
+    } else if (openNewWindow) {
+        // Cascade the new window relative to the last one.
+        NSWindow *lastWindow = windows.lastObject.window;
+        NSRect frame = lastWindow.frame;
+        NSPoint topLeft = CGPointMake(NSMinX(frame), NSMaxY(frame));
+        NSPoint cascadedTopLeft = [lastWindow cascadeTopLeftFromPoint:topLeft];
+        NVWindowController *controller = [[NVWindowController alloc] initWithContextManager:contextManager];
+        [controller.window setFrameTopLeftPoint:cascadedTopLeft];
+        [controller spawnWithOptions:options files:filenames];
+        return;
+    }
+
+    std::vector<std::string_view> paths;
+    paths.reserve([filenames count]);
+    for (NSString *path in filenames) {
+        paths.push_back([path UTF8String]);
+    }
+
+    NVWindowController *controller = openWith(windows, paths);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"NVPreferencesOpenFilesInBuffersInsteadOfTabs"]) {
+        controller.process->open_buffers(paths);
+    }
+    else {
+        controller.process->open_tabs(paths);
+    }
+    [controller.window makeKeyAndOrderFront:nil];
+}
+
+- (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender {
+    // Do not open an Untitled window if invoked from nvmm, the
+    // command-line tool. The Apple event handler for nvmm will
+    // open a new window if one isn't already open.
+    for (NSString *arg in NSProcessInfo.processInfo.arguments) {
+        if ([arg isEqualToString:@"-nvmm"]) return NO;
+    }
+    return YES;
 }
 
 - (BOOL)applicationOpenUntitledFile:(NSApplication *)sender {

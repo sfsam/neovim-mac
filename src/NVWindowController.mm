@@ -483,6 +483,36 @@ static std::pair<arc_ptr<CTFontDescriptorRef>, CGFloat> getFontDescriptor(nvim::
     return [self spawnWithArgs:argv.data() workingDirectory:directory];
 }
 
+- (int)spawnWithOptions:(NSArray<NSString*> *)options files:(NSArray<NSString*> *)filenames {
+    // If we are invoked from the command-line the environment
+    // variable $PWD will contain the working directory.
+    // If we are invoked by double-clicking the app icon, $PWD
+    // will be nil in which case we use the home directory.
+    NSString *cwd = NSProcessInfo.processInfo.environment[@"PWD"];
+    NSString *directory = cwd ?: NSHomeDirectory();
+    if ([filenames count] > 0) {
+        directory = [filenames[0] stringByDeletingLastPathComponent];
+    }
+
+    std::vector<const char*> argv{"nvim", "--embed"};
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults boolForKey:@"NVPreferencesOpenFilesInBuffersInsteadOfTabs"]) {
+        argv.push_back("-p");
+    }
+
+    for (NSString *option in options) {
+        argv.push_back(option.UTF8String);
+    }
+
+    for (NSString *file in filenames) {
+        argv.push_back(file.UTF8String);
+    }
+
+    argv.push_back(nullptr);
+    return [self spawnWithArgs:argv.data() workingDirectory:directory];
+}
+
 - (int)spawnOpenURLs:(NSArray<NSURL*>*)urls {
     NSMutableArray<NSString*> *paths = [NSMutableArray arrayWithCapacity:[urls count]];
 

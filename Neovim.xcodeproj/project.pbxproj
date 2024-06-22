@@ -34,6 +34,8 @@
 		69E15157244E023900F8AEC7 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 69E15156244E023900F8AEC7 /* shaders.metal */; };
 		69FB837D24A0F370008CCED1 /* NVRenderContext.mm in Sources */ = {isa = PBXBuildFile; fileRef = 69FB837C24A0F370008CCED1 /* NVRenderContext.mm */; };
 		9292063A289F5B7300C5216D /* NVPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92920639289F5B7300C5216D /* NVPrefsWindowController.m */; };
+		92D2EAEC2939AF0800B23534 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D2EAEB2939AF0800B23534 /* main.m */; };
+		92D2EAF52939B09B00B23534 /* nvmm in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92D2EAE92939AF0800B23534 /* nvmm */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 69240E15242B9854004E0DE0;
 			remoteInfo = Neovim;
+		};
+		92D2EAF12939AFD400B23534 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69240E0E242B9854004E0DE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92D2EAE82939AF0800B23534;
+			remoteInfo = nvmm;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -85,6 +94,25 @@
 			dstSubfolderSpec = 6;
 			files = (
 				696465D324AB971B0084E178 /* nvim in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92D2EAE72939AF0800B23534 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		92D2EAF32939B00D00B23534 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Helpers;
+			dstSubfolderSpec = 1;
+			files = (
+				92D2EAF52939B09B00B23534 /* nvmm in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +169,9 @@
 		69FB837C24A0F370008CCED1 /* NVRenderContext.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NVRenderContext.mm; sourceTree = "<group>"; };
 		92920638289F5B7300C5216D /* NVPrefsWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NVPrefsWindowController.h; sourceTree = "<group>"; };
 		92920639289F5B7300C5216D /* NVPrefsWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NVPrefsWindowController.m; sourceTree = "<group>"; };
+		92D2EAE92939AF0800B23534 /* nvmm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nvmm; sourceTree = BUILT_PRODUCTS_DIR; };
+		92D2EAEB2939AF0800B23534 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92D2EAF02939AF3700B23534 /* nvmm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nvmm.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +189,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		92D2EAE62939AF0800B23534 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -168,6 +206,7 @@
 				69240E2C242B9855004E0DE0 /* test */,
 				69CB6DE724AB94310075229B /* nvim */,
 				69240E38242B9FF1004E0DE0 /* Resources */,
+				92D2EAEA2939AF0800B23534 /* nvmm */,
 				69240E17242B9854004E0DE0 /* Products */,
 				69E15153244DFE3400F8AEC7 /* Frameworks */,
 			);
@@ -178,6 +217,7 @@
 			children = (
 				69240E16242B9854004E0DE0 /* Neovim.app */,
 				69240E29242B9855004E0DE0 /* NeovimTests.xctest */,
+				92D2EAE92939AF0800B23534 /* nvmm */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,6 +314,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		92D2EAEA2939AF0800B23534 /* nvmm */ = {
+			isa = PBXGroup;
+			children = (
+				92D2EAF02939AF3700B23534 /* nvmm.entitlements */,
+				92D2EAEB2939AF0800B23534 /* main.m */,
+			);
+			path = nvmm;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -290,10 +339,12 @@
 				69019FB62966142D008B3582 /* CopyFiles */,
 				69B2C3F6296DE8CD0031B353 /* ShellScript */,
 				9268C0182C266E8200966004 /* Set CFBundleShortVersionString to NVIM version */,
+				92D2EAF32939B00D00B23534 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				92D2EAF22939AFD400B23534 /* PBXTargetDependency */,
 			);
 			name = Neovim;
 			productName = Neovim;
@@ -318,13 +369,30 @@
 			productReference = 69240E29242B9855004E0DE0 /* NeovimTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		92D2EAE82939AF0800B23534 /* nvmm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92D2EAEF2939AF0800B23534 /* Build configuration list for PBXNativeTarget "nvmm" */;
+			buildPhases = (
+				92D2EAE52939AF0800B23534 /* Sources */,
+				92D2EAE62939AF0800B23534 /* Frameworks */,
+				92D2EAE72939AF0800B23534 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nvmm;
+			productName = nvmm;
+			productReference = 92D2EAE92939AF0800B23534 /* nvmm */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		69240E0E242B9854004E0DE0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1540;
 				ORGANIZATIONNAME = "Jay Sandhu";
 				TargetAttributes = {
 					69240E15242B9854004E0DE0 = {
@@ -333,6 +401,9 @@
 					69240E28242B9855004E0DE0 = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = 69240E15242B9854004E0DE0;
+					};
+					92D2EAE82939AF0800B23534 = {
+						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
@@ -351,6 +422,7 @@
 			targets = (
 				69240E15242B9854004E0DE0 /* Neovim */,
 				69240E28242B9855004E0DE0 /* NeovimTests */,
+				92D2EAE82939AF0800B23534 /* nvmm */,
 			);
 		};
 /* End PBXProject section */
@@ -450,6 +522,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		92D2EAE52939AF0800B23534 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92D2EAEC2939AF0800B23534 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -457,6 +537,11 @@
 			isa = PBXTargetDependency;
 			target = 69240E15242B9854004E0DE0 /* Neovim */;
 			targetProxy = 69240E2A242B9855004E0DE0 /* PBXContainerItemProxy */;
+		};
+		92D2EAF22939AFD400B23534 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92D2EAE82939AF0800B23534 /* nvmm */;
+			targetProxy = 92D2EAF12939AFD400B23534 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -684,6 +769,30 @@
 			};
 			name = Release;
 		};
+		92D2EAED2939AF0800B23534 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = nvmm/nvmm.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		92D2EAEE2939AF0800B23534 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = nvmm/nvmm.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -710,6 +819,15 @@
 			buildConfigurations = (
 				69240E36242B9855004E0DE0 /* Debug */,
 				69240E37242B9855004E0DE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92D2EAEF2939AF0800B23534 /* Build configuration list for PBXNativeTarget "nvmm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92D2EAED2939AF0800B23534 /* Debug */,
+				92D2EAEE2939AF0800B23534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
