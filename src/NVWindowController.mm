@@ -244,6 +244,9 @@ static inline NSSize minGridViewSize(NSSize cellSize) {
     [self resizeWindow];
     [window setResizeIncrements:cellSize];
     [window setContentMinSize:minGridViewSize(cellSize)];
+
+    // Restore title. Grid size was displayed during resizing.
+    [self titleDidChange];
 }
 
 /// Returns a font descriptor and font size based on the guifont option.
@@ -512,6 +515,9 @@ static std::pair<arc_ptr<CTFontDescriptorRef>, CGFloat> getFontDescriptor(nvim::
             }
 
             [self saveFrame];
+
+            // Restore title. Grid size was displayed during resizing.
+            [self titleDidChange];
         }
     });
 }
@@ -524,6 +530,9 @@ static std::pair<arc_ptr<CTFontDescriptorRef>, CGFloat> getFontDescriptor(nvim::
 // resize the Neovim grid to occupy the full window.
 - (void)windowDidResize:(NSNotification *)notification {
     nvim::grid_size size = [gridView desiredGridSize];
+
+    // Display grid size while resizing. Will restore title when done.
+    [self.window setTitle:[NSString stringWithFormat:@"%d × %d", size.width, size.height]];
 
     if (!isLiveResizing) {
         [self saveFrame];
