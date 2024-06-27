@@ -349,7 +349,7 @@ static std::pair<arc_ptr<CTFontDescriptorRef>, CGFloat> getFontDescriptor(nvim::
     NSSize cellSize = gridView.cellSize;
 
     [window makeFirstResponder:self];
-    [window setAnimationBehavior:NSWindowAnimationBehaviorDocumentWindow];
+    [window setAnimationBehavior:NSWindowAnimationBehaviorNone];
     [window setContentView:gridView];
     [window setResizeIncrements:cellSize];
     [window setContentMinSize:minGridViewSize(cellSize)];
