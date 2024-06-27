@@ -240,9 +240,12 @@ int process::connect(std::string_view addr) {
 /// Note: This function should only be called once.
 /// @returns Zero, for now.
 int process::io_init(int readfd, int writefd) {
+    dispatch_queue_attr_t attr;
+    attr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL,
+                                                   QOS_CLASS_USER_INITIATED, 0);
     read_fd = readfd;
     write_fd = writefd;
-    queue = dispatch_queue_create(nullptr, DISPATCH_QUEUE_SERIAL);
+    queue = dispatch_queue_create(nullptr, attr);
 
     // Response contexts may be referenced by dispatch_after blocks (timeout
     // handlers), which can outlive the process object. To prevent dangling
